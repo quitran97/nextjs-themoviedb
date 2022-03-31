@@ -1,0 +1,62 @@
+.signUpWrapper {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  background-image: url("./image/signUpBackground.jpg");
+  background-repeat: unset;
+  background-size: cover;
+  background-position: center;
+}
+
+.signUpSubWrapper {
+  padding: 30px 40px;
+}
+
+/* .signUpHeading {
+} */
+
+.signUpHeading h2 {
+  margin: 0;
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+.signUpContent {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.contentLeft {
+  flex: 5;
+  margin-right: 40px;
+  font-size: 1.92rem;
+}
+
+.contentLeft p {
+  margin: 0;
+  line-height: normal;
+}
+
+.contentLeft > input {
+  font-size: 1.728rem;
+  background-color: rgba(var(--accountPurple), 1);
+  border: solid 2px #805be7;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.contentLeft p i,
+.contentRight {
+  opacity: 0.8;
+}
+
+.contentRight {
+  margin-left: 20px;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  list-style-type: disc;
+  flex: 3;
+  line-height: normal;
+}

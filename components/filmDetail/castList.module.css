@@ -1,0 +1,52 @@
+.castListWrap{
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    padding: 30px 40px;
+}
+
+.castListWrap h3 {
+    font-size: 2.24rem;
+    margin-bottom: 20px;
+}
+
+.listCastContainer{
+    position: relative;
+}
+
+.listCast{
+    margin: -10px 0 0 -10px;
+    padding-bottom: 10px;
+    display: flex;
+    overflow-x: scroll;
+    list-style-type: none;
+}
+
+.listCast > li {
+    margin: 10px 4px 10px 10px;
+}
+
+.listCastContainer::after{
+  content: "";
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    #fff 100%
+  );
+  will-change: opacity;
+  pointer-events: none;
+}
+
+/* CSS transition show & hide scroll opacity*/
+.hiddenEffect::after {
+  opacity: 0;
+  transition: 0.3s linear;
+  }
+  
+.showEffect::after {
+  opacity: 1;
+  transition: 0.3s linear;
+  }

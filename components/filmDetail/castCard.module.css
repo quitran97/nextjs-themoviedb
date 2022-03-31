@@ -1,0 +1,37 @@
+.castCardWrap {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    width: 138px;
+    height: 275px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border: 1px solid rgba(227,227,227,1);
+    border-radius: 8px;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.castCardWrap > a {
+    height: 175px;
+}
+
+.castCardWrap section {
+    line-height: normal;
+    padding: 10px;
+}
+
+.castCardWrap section a {
+    font-size: 1.6rem;
+    color: #000;
+    display: inline-block;
+    width: 100%;
+}
+
+.castCardWrap section a:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.castCardWrap section p {
+    font-size: 1.44rem;
+    margin: 0;
+}

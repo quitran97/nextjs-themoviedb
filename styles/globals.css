@@ -1,0 +1,99 @@
+/* Google font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap");
+@import "~antd/dist/antd.css";
+
+:root {
+  --tmdbLightGreen: 30, 213, 169;
+  --tmdbLightBlue: 1, 180, 228;
+  --tmbDarkBlue: 3, 37, 65;
+  --accountPurple: 128, 91, 231;
+  --tmdbLighterGreen: 192, 254, 207;
+  --tmdbLightGreen: 30, 213, 169;
+  --tmdbLogoOrange: 253, 193, 112;
+  --tmdbLogoRed: 217, 59, 99;
+}
+
+/* CSS scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(219, 219, 219, 1);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Class style global */
+
+.maxWidth1300 {
+  max-width: 1300px;
+  width: 100%;
+}
+
+.textWhite {
+  color: #fff !important;
+}
+
+.borderRadius30 {
+  border-radius: 30px;
+  border: none;
+}
+
+.borderRadius8 {
+  border-radius: 8px;
+  border: none;
+}
+
+.fontWeight4 {
+  font-weight: 400 !important;
+}
+
+.fontWeight6 {
+  font-weight: 600 !important;
+}
+
+.fontWeight7 {
+  font-weight: 700 !important;
+}
+
+.marginB10 {
+  margin-bottom: 10px;
+}
+
+.fontS16 {
+  font-size: 1.6rem !important;
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-family: "Source Sans Pro", sans-serif;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  line-height: 1.6rem;
+}
+
+.grid {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.gridFullWidth {
+  width: 100%;
+}
+
+.gridRow {
+  display: flex;
+  flex-wrap: wrap;
+}

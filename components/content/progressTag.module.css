@@ -1,0 +1,74 @@
+.tagWrapper {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.tagAvatar {
+  margin-right: 10px;
+  height: 56px;
+}
+
+.tagAvatar > a img {
+  border-radius: 50%;
+}
+
+.tagStatus {
+  flex: 1;
+}
+
+.tagStatus > h3 {
+  margin: 0;
+  font-size: 1.92rem;
+  font-weight: 600;
+  line-height: 1.92rem;
+}
+
+.tagStatus > h3 > a {
+  color: #333;
+}
+
+.tagStatus > h3:hover a {
+  color: rgba(var(--tmdbLightGreen), 1);
+}
+
+.tagProgress {
+  line-height: 8px;
+}
+
+.gaugeWrap {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.tagProgress .gaugeWrap h4 {
+  display: inline-block;
+  width: 60px;
+  padding-left: 5px;
+  margin: 0;
+}
+
+.tagProgress .gauge {
+  width: 100%;
+  height: 8px;
+  border-radius: 8px;
+  background-clip: content-box;
+}
+
+.backgroundLinearGreen {
+  background: linear-gradient(
+    to right,
+    rgba(var(--tmdbLighterGreen), 1) 0%,
+    rgba(var(--tmdbLightGreen), 1) 100%
+  );
+}
+
+.backgroundOrangeRed {
+  background: linear-gradient(
+    to right,
+    rgba(var(--tmdbLogoOrange), 1) 0%,
+    rgba(var(--tmdbLogoRed), 1) 100%
+  );
+}

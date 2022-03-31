@@ -1,0 +1,81 @@
+.leaderboardWrapper {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  padding: 30px 40px;
+}
+
+.leaderboardHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.leaderboardHeading {
+  margin-bottom: 0;
+  margin-right: 20px;
+  font-size: 2.4rem;
+  height: fit-content;
+  line-height: normal;
+}
+
+.leaderboardNote {
+  margin: 0;
+  list-style-type: none;
+}
+
+.leaderboardNote > li {
+  font-size: 1.44rem;
+  line-height: normal;
+  height: fit-content;
+}
+
+.dotCustom {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  color: red;
+  margin-right: 10px;
+}
+
+.leaderboardContent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.leaderboardContent ul {
+  list-style-type: none;
+  margin: 0;
+  flex: 1;
+}
+
+.leaderboardContent ul li:last-child {
+  margin: 0;
+}
+
+.leaderboardContent .tagListsLeft > li {
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+.leaderboardContent .tagListsRight > li {
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.backgroundLinearGreen {
+  background: linear-gradient(
+    to right,
+    rgba(var(--tmdbLighterGreen), 1) 0%,
+    rgba(var(--tmdbLightGreen), 1) 100%
+  );
+}
+
+.backgroundOrangeRed {
+  background: linear-gradient(
+    to right,
+    rgba(var(--tmdbLogoOrange), 1) 0%,
+    rgba(var(--tmdbLogoRed), 1) 100%
+  );
+}

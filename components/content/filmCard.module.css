@@ -1,0 +1,103 @@
+.cardWrapper {
+  display: inline-block;
+  width: 15rem;
+  height: 31.1rem;
+}
+
+/* Image */
+
+.imageCard {
+  position: relative;
+  height: 22.5rem;
+}
+
+.imageFilm {
+  height: inherit;
+  cursor: pointer;
+}
+
+.optionCard {
+  display: inline-flex;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.optionCard:hover {
+  cursor: pointer;
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%)
+    hue-rotate(156deg) brightness(98%) contrast(99%);
+}
+
+.optionCard > svg {
+  width: 25.6px;
+  height: 25.6px;
+  opacity: 0.6;
+}
+
+/* Begin Title */
+
+/* .titleCard {
+  padding: 26px 10px 0 10px;
+  position: relative;
+} */
+
+/* .titleCard .outerRing {
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  left: 1rem;
+  top: -1.9rem;
+}
+
+.titleCard .circleBackground {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.titleCard .outlineCircle {
+  outline: 1px red;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* CSS antdesign progress text */
+
+/* .progressText {
+  position: absolute;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+} */
+
+.titleCard .titleText {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  line-height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.titleCard .titleText h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.titleCard .titleText h2:hover {
+  cursor: pointer;
+  color: rgb(var(--tmdbLightBlue));
+}
+
+.titleCard .titleText p {
+  margin: 0;
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.6);
+}

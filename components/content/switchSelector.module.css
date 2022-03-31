@@ -1,0 +1,54 @@
+.switchGeneral {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Source Sans Pro", sans-serif;
+  border-width: 1px;
+  border-color: #333;
+  display: inline-block;
+  position: relative;
+  background: none;
+  z-index: 1;
+}
+
+.switchGeneral input {
+  cursor: pointer;
+}
+
+.inputFirst {
+  border-right: none;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  padding: 4px 20px;
+  z-index: 100;
+  border-style: solid;
+  border-right: unset;
+}
+
+.inputActive {
+  background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+  /* -webkit-background-clip: text; */
+  background-clip: text !important;
+  color: transparent;
+}
+
+.inputSecond {
+  border-left: none;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  padding: 4px 20px;
+  z-index: 100;
+  border-style: solid;
+  border-left: unset;
+}
+
+.switchTransition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2.84rem;
+  background: rgba(3, 37, 65, 1);
+  border-radius: calc(18px * 2);
+  transition: all 0.2s linear;
+  z-index: 1;
+}

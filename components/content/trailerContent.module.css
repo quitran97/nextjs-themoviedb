@@ -1,0 +1,28 @@
+.trailerWrapper {
+  background-color: #425c71;
+  padding: 30px 40px 0 40px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+.trailerHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.trailerHeader h2 {
+  margin-bottom: 0;
+  margin-right: 20px;
+  font-size: 2.4rem;
+  line-height: 30.4px;
+}
+
+/* .trailerLists {
+} */
+
+.trailerLists p {
+  margin: 0;
+  padding: 20px 0;
+  font-size: 1.6rem;
+}

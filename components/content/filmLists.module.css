@@ -1,0 +1,77 @@
+.popularFilmsWrapper {
+  padding-top: 30px;
+  position: relative;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+.backgroundWaveImage {
+  background-image: url("./image/waveBackground.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.selectHeader {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.selectHeader h2 {
+  margin: 0 20px 0 0;
+  font-size: 2.4rem;
+}
+
+/* .selectorWrap {
+}
+
+.filmLists {
+} */
+
+.filmLists::after {
+  content: "";
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    #fff 100%
+  );
+  will-change: opacity;
+  pointer-events: none;
+}
+
+.showLists {
+  margin: 0;
+  padding: 20px 0;
+  height: unset;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.showLists > li:first-child {
+  margin-left: 40px;
+}
+
+.showLists > li + li {
+  margin-left: 20px;
+}
+
+/* CSS transition show & hide scroll opacity*/
+.hiddenEffect::after {
+  opacity: 0;
+  transition: 0.3s linear;
+}
+
+.showEffect::after {
+  opacity: 1;
+  transition: 0.3s linear;
+}

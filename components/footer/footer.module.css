@@ -1,0 +1,84 @@
+#footer {
+  width: 100%;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  background-color: rgb(3, 37, 65);
+}
+
+.footerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding: 80px 0;
+}
+
+.footerWrapper > div {
+  margin-right: 40px;
+}
+
+.footerWrapper > div:last-child {
+  margin: 0;
+}
+
+.footerWrapper h3 {
+  font-size: 2.016rem;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 2.8224rem;
+}
+
+.footerWrapper ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+.footerWrapper ul li a {
+  font-size: 1.728rem;
+  color: #fff;
+  line-height: normal;
+}
+
+.footerLogo {
+  display: block;
+  width: 220px;
+  height: 144px;
+  position: relative;
+  top: -36px;
+}
+
+.footerLogo .joinBtn {
+  text-transform: uppercase;
+  padding: 8px 16px;
+  background-color: #fff;
+  border: solid 2px #fff;
+  border-radius: 5px;
+  font-size: 1.872rem;
+  line-height: normal;
+  color: rgba(var(--tmdbLightBlue), 1);
+  position: absolute;
+  right: 0;
+  bottom: -35px;
+}
+
+.footerLogo a {
+  display: block;
+}
+
+.footerLogo a svg {
+  width: 130px;
+  height: 94px;
+  position: relative;
+  right: 0;
+}
+
+/* .theBasics {
+}
+
+.involved {
+}
+
+.community {
+}
+
+.legal {
+} */

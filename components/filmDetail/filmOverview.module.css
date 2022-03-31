@@ -1,0 +1,384 @@
+.filmOverviewWrap {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  margin-top: 64px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right top;
+}
+
+.filmOverviewSubWrap {
+  padding: 30px 40px;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.filmBackdrop {
+  height: 450px;
+  width: 300px;
+}
+
+.filmBackdrop:hover .filmBackdropZoom {
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+}
+
+.filmBackdrop .filmBackdropOverlay {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.filmBackdrop .filmBackdropZoom {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  font-size: 2.08rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: linear 0.2s;
+}
+
+.filmBackdrop .filmBackdropZoom span + span {
+  margin-left: 6px;
+  line-height: normal;
+}
+
+.filmTitleWrapper {
+  padding-left: 40px;
+  flex: 1;
+}
+
+.filmTitle {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.filmTitle h2 {
+  font-size: 3.52rem;
+  margin: 0;
+  line-height: normal;
+}
+
+.filmTitle h2:hover {
+  opacity: 0.5;
+}
+
+.filmTitle > h2 > span {
+  opacity: 0.8;
+}
+
+.filmTitle > div {
+  font-size: 1.6rem;
+  line-height: normal;
+}
+
+.filmTitle .certification {
+  opacity: 0.6;
+  padding: 1px 4px;
+  border: 1px solid;
+  line-height: normal;
+  margin-right: 7px;
+}
+/* .filmTitle .dateRelease {
+} */
+
+.filmTitle .genres {
+  margin: 0;
+  list-style-type: none;
+  display: inline-flex;
+  padding-left: 20px;
+  position: relative;
+}
+
+.filmTitle .genres::before {
+  content: "\2022";
+  line-height: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 7px;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+}
+
+.filmTitle .genres > li {
+  z-index: 1;
+}
+
+.filmTitle .genres > li:hover a {
+  opacity: 0.5;
+}
+
+.filmTitle .genres > li > a {
+  color: #fff;
+}
+
+.filmTitle .genres li + li {
+  margin-left: 5px;
+}
+
+.filmTitle .runtime {
+  padding-left: 20px;
+}
+
+.filmTitle .runtime::before {
+  content: "\2022";
+  line-height: 1;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: -12px;
+}
+
+/* CSS Action bar */
+
+.filmTitleWrapper .action {
+  margin-bottom: 20px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.filmTitleWrapper .action .chart {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.filmTitleWrapper .chart > div:first-child {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.filmTitleWrapper .chart > div > div {
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  transition: transform linear 0.2s;
+}
+
+.filmTitleWrapper .chart > div:hover > div {
+  transform: scale(1.2);
+}
+
+.filmTitleWrapper .chart > div > div > div {
+  background-color: black;
+}
+
+.filmTitleWrapper .chart > div:last-child {
+  margin-left: 6px;
+  font-size: 1.6rem;
+}
+
+/* CSS Tooltip List */
+.action .tooltipList {
+  width: 46px;
+  height: 46px;
+  background-color: #032541;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.action .tooltipList svg {
+  width: 16px;
+  height: 16px;
+}
+
+.action .tooltipList + li {
+  margin-left: 20px;
+}
+
+.action .trailerBtn {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  cursor: pointer;
+}
+
+.action .trailerBtn:hover {
+  opacity: 0.5;
+  transition: linear 0.2s;
+}
+
+.action .trailerBtn svg {
+  font-size: 2.24rem;
+  margin-right: 5px;
+}
+
+/* CSS custom title li  */
+.action li[data-title]:hover::before {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -40px;
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: #032541;
+  white-space: nowrap;
+}
+
+.action li[data-title]:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: calc(23px-8px);
+  display: inline-block;
+  border: 8px solid transparent;
+  border-bottom: 8px solid #032541;
+}
+
+.filmTitleWrapper .tagLine {
+  opacity: 0.7;
+  font-size: 1.76rem;
+  line-height: normal;
+}
+
+.filmTitleWrapper .overview h3 {
+  font-size: 2.08rem;
+  margin: 10px 0 8px 0;
+  line-height: normal;
+}
+
+.filmTitleWrapper .overview p {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.filmTitleWrapper .producer {
+  list-style-type: none;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  margin-bottom: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.filmTitleWrapper .producer > li {
+  padding: 0 20px 20px 0;
+  width: 225px;
+  line-height: normal;
+}
+
+.filmTitleWrapper .producer p {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.filmTitleWrapper .producer p:first-child:hover {
+  opacity: 0.5;
+}
+
+/* Modal Trailer */
+.modalTrailer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  display: none;
+  animation: showEffect ease-in-out 0.2s;
+}
+
+.modalTitle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+  background-color: #000;
+}
+
+.modalTitle h2 {
+  margin: 0;
+  line-height: 30px;
+  font-size: 2rem;
+  flex: 1;
+}
+
+.modalTrailerWrapper {
+  width: 1000px;
+  height: 626px;
+  margin: auto;
+}
+
+.modalTrailerClose:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.modalTrailerVideo {
+  border: none;
+}
+
+/* Expand Backdrop */
+.backdropExpand {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  animation: showEffect ease-in-out 0.2s;
+}
+
+.backdropExpandWrap {
+  position: relative;
+  width: 400px;
+  height: 600px;
+}
+
+.backdropExpandWrap > span:last-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2.04rem;
+  padding: 10px;
+}
+
+.showModalEffect {
+  display: flex !important;
+}
+
+@keyframes showEffect {
+  from {
+    transform: scale(0.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
