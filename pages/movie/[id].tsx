@@ -5,6 +5,7 @@ import {
   useEffect,
   useReducer,
   createContext,
+  useLayoutEffect,
 } from "react";
 import Head from "next/head";
 import useSWR from "swr";
@@ -31,6 +32,12 @@ const FilmTVDetail = () => {
   const router = useRouter();
   const id = router.query.id;
 
+  useLayoutEffect(() => {
+    if (!router.isFallback) {
+      console.log("loading...");
+    }
+  }, [router.isFallback]);
+
   // API Movie
   const MovieDetailAPI: string = id
     ? `https://api.themoviedb.org/3/movie/${id}?api_key=4b1350e47db61e9adf4a6203687e213b`
@@ -53,7 +60,9 @@ const FilmTVDetail = () => {
     getAPIMovieDetail();
   }, [getAPIMovieDetail]);
 
-  return (
+  return router.isFallback ? (
+    <div>Loading...</div>
+  ) : (
     <APIMovieContext.Provider value={state.filmMovieDetail}>
       <Head>
         <title>{state.filmMovieDetail.original_title}</title>
