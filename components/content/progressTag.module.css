@@ -10,8 +10,19 @@
   height: 56px;
 }
 
-.tagAvatar > a img {
-  border-radius: 50%;
+.tagAvatar > a {
+  width: 56px;
+    height: 56px;
+    display: inline-flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.tagAvatar > a span {
+  color: #fff;
+  font-size: 1.8rem;
+  text-transform: uppercase;
 }
 
 .tagStatus {

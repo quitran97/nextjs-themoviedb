@@ -36,36 +36,76 @@ const Leaderboard = () => {
         <div className={clsx(leaderboardCSS.leaderboardContent)}>
           <ul className={clsx(leaderboardCSS.tagListsLeft)}>
             <li>
-              <ProgressTag gaugeTop={681352} gaugeBottom={8026}></ProgressTag>
+              <ProgressTag
+                gaugeTop={53314}
+                gaugeBottom={26067}
+                name="jinbvcx"
+              ></ProgressTag>
             </li>
             <li>
-              <ProgressTag gaugeTop={8306} gaugeBottom={7216}></ProgressTag>
+              <ProgressTag
+                gaugeTop={2042157}
+                gaugeBottom={8118}
+                name="Banana"
+              ></ProgressTag>
             </li>
             <li>
-              <ProgressTag gaugeTop={33427} gaugeBottom={6151}></ProgressTag>
+              <ProgressTag
+                gaugeTop={2545270}
+                gaugeBottom={6135}
+                name="Samara"
+              ></ProgressTag>
             </li>
             <li>
-              <ProgressTag gaugeTop={257277} gaugeBottom={4110}></ProgressTag>
+              <ProgressTag
+                gaugeTop={696152}
+                gaugeBottom={5510}
+                name="talestalker"
+              ></ProgressTag>
             </li>
             <li>
-              <ProgressTag></ProgressTag>
+              <ProgressTag
+                gaugeTop={47549}
+                gaugeBottom={4393}
+                name="BahbugandHum"
+              ></ProgressTag>
             </li>
           </ul>
           <ul className={clsx(leaderboardCSS.tagListsRight)}>
             <li>
-              <ProgressTag></ProgressTag>
+              <ProgressTag
+                gaugeTop={20667}
+                gaugeBottom={11545}
+                name="Ritx"
+              ></ProgressTag>
             </li>
             <li>
-              <ProgressTag></ProgressTag>
+              <ProgressTag
+                gaugeTop={32025}
+                gaugeBottom={7681}
+                name="Lammens Kristiaan"
+              ></ProgressTag>
             </li>
             <li>
-              <ProgressTag></ProgressTag>
+              <ProgressTag
+                gaugeTop={75196}
+                gaugeBottom={4393}
+                name="qualitylover"
+              ></ProgressTag>
             </li>
             <li>
-              <ProgressTag></ProgressTag>
+              <ProgressTag
+                gaugeTop={285998}
+                gaugeBottom={4667}
+                name="raze464"
+              ></ProgressTag>
             </li>
             <li>
-              <ProgressTag></ProgressTag>
+              <ProgressTag
+                gaugeTop={8749}
+                gaugeBottom={3769}
+                name="Kuroneko45"
+              ></ProgressTag>
             </li>
           </ul>
         </div>

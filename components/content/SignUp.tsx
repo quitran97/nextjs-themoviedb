@@ -12,7 +12,7 @@ const SignUp = () => {
           <div className={clsx(signUpCSS.contentLeft)}>
             <p>
               Get access to maintain your own
-              <i>{`custom personal lists, track what you've seen`}</i> and
+              <i>{` custom personal lists, track what you've seen`}</i> and
               search and filter for <i>what to watch next</i>
               {` —regardless if it's in
               theatres, on TV or available on popular streaming services like .`}

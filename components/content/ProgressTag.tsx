@@ -1,27 +1,26 @@
 import clsx from "clsx";
 import Link from "next/link";
-import Image from "next/image";
-import Avatar from "./image/avatar.jpg";
 import progressCSS from "./progressTag.module.css";
 import ProgressTagProps from "interface/ProgressTagProps";
 
 const ProgressTag = ({
   gaugeTop = 2540000,
   gaugeBottom = 9000,
+  name,
 }: ProgressTagProps) => {
   return (
     <section className={clsx(progressCSS.tagWrapper)}>
       <div className={clsx(progressCSS.tagAvatar)}>
         <Link href="#">
-          <a>
-            <Image src={Avatar} width={56} height={56} alt="Avatar"></Image>
+          <a style={{ backgroundColor: `#${Math.floor(Math.random() * 900)}` }}>
+            <span>{name?.charAt(0)}</span>
           </a>
         </Link>
       </div>
       <div className={clsx(progressCSS.tagStatus)}>
         <h3>
           <Link href="#">
-            <a>talestalker</a>
+            <a>{name}</a>
           </Link>
         </h3>
         <div className={clsx(progressCSS.tagProgress)}>

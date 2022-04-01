@@ -1,6 +1,7 @@
 interface ProgressTagProps {
-    gaugeTop?: number
-    gaugeBottom?: number
+  gaugeTop?: number;
+  gaugeBottom?: number;
+  name?: string;
 }
 
-export default ProgressTagProps
+export default ProgressTagProps;
