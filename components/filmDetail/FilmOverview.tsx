@@ -33,6 +33,7 @@ import {
   CloseOutlined,
 } from "@ant-design/icons";
 import { APIMovieCredits } from "./";
+import { useRouter } from "next/router";
 
 const FetchDataRating = (shouldFetch: boolean, dataAPI: string) => {
   const { data, error } = useSWR(shouldFetch ? dataAPI : null, fetch);
@@ -54,6 +55,7 @@ const FilmOverview = () => {
   const [showTrailer, setShowTrailer] = useState(false);
   const [showBackdrop, setShowBackdrop] = useState(false);
   const [state, dispatch] = useReducer(reducer, initState);
+  const router = useRouter();
 
   // API TV Rating
   const tvRatingAPI: string = APITvData.id
@@ -241,7 +243,9 @@ const FilmOverview = () => {
     };
   }, []);
 
-  return (
+  return router.isFallback ? (
+    <div>{`loading...`}</div>
+  ) : (
     <React.Fragment>
       <div
         className={clsx(filmOverviewCSS.filmOverviewWrap)}

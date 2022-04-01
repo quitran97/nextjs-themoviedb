@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import footerCSS from "./footer.module.css";
 import Logo from "./image/TMDB_logo.svg";
+import { memo } from "react";
 
 const Footer = () => {
   return (
@@ -119,4 +120,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

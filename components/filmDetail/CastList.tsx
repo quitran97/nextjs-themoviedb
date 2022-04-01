@@ -5,6 +5,7 @@ import {
   useReducer,
   useCallback,
   useEffect,
+  memo,
 } from "react";
 import CastCard from "./CastCard";
 import { APIMovieCredits } from "./";
@@ -112,4 +113,4 @@ const CastList = () => {
   );
 };
 
-export default CastList;
+export default memo(CastList);

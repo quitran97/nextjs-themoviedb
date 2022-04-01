@@ -6,6 +6,7 @@ import React, {
   useContext,
   useCallback,
   useReducer,
+  memo,
 } from "react";
 import FilmOverview from "./FilmOverview";
 import { APIMovieContext } from "pages/movie/[id]";
@@ -54,10 +55,10 @@ const ContentFilmDetail = () => {
 
   return (
     <APIMovieCredits.Provider value={state.movieCredits}>
-      {/* <FilmOverview></FilmOverview> */}
+      <FilmOverview></FilmOverview>
       <CastList></CastList>
     </APIMovieCredits.Provider>
   );
 };
 
-export default ContentFilmDetail;
+export default memo(ContentFilmDetail);

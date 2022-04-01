@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, memo, useEffect } from "react";
 import React from "react";
 import clsx from "clsx";
 import Link from "next/link";
@@ -195,4 +195,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);
