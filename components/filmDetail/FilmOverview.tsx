@@ -53,6 +53,8 @@ const FilmOverview = () => {
   const [shouldFetch, setShouldFetch] = useState(true);
   const [showTrailer, setShowTrailer] = useState(false);
   const [showBackdrop, setShowBackdrop] = useState(false);
+  const [renderTv, setRenderTv] = useState<string>("");
+  const [renderMovie, setRenderMovie] = useState<string>();
   const [state, dispatch] = useReducer(reducer, initState);
 
   // API TV Rating
@@ -101,7 +103,7 @@ const FilmOverview = () => {
   const getAPIMovieVideo = useCallback(async () => {
     if (movieVideoResponse && shouldFetch) {
       const dataMovieRelease = await movieVideoResponse.clone().json();
-      dispatch(setVideoMovie(dataMovieRelease));
+      dispatch(setVideoMovie(await dataMovieRelease));
       setShouldFetch(false);
     }
   }, [movieVideoResponse, shouldFetch]);
@@ -109,7 +111,7 @@ const FilmOverview = () => {
   const getAPITvVideo = useCallback(async () => {
     if (tvVideoResponse && shouldFetch) {
       const dataTvRelease = await tvVideoResponse.clone().json();
-      dispatch(setVideoTv(dataTvRelease));
+      dispatch(setVideoTv(await dataTvRelease));
       setShouldFetch(false);
     }
   }, [tvVideoResponse, shouldFetch]);
@@ -240,6 +242,38 @@ const FilmOverview = () => {
       backdropExpand?.removeEventListener("click", handleStopPropagation);
     };
   }, []);
+
+  useEffect(() => {
+    if (state.tvVideo.id) {
+      setRenderTv(
+        `https://www.youtube.com/embed/${
+          state.tvVideo.results?.find((prop) => prop.type === "Trailer")?.key
+        }`
+      );
+    }
+
+    if (state.movieVideo.id) {
+      setRenderMovie(
+        `https://www.youtube.com/embed/${
+          state.movieVideo.results?.find((prop) => prop.type === "Trailer")?.key
+        }`
+      );
+    }
+  }, [state.movieVideo.results, state.tvVideo.results]);
+
+  // state.movieVideo.id || state.tvVideo.id
+  //   ? state.movieVideo.id
+  //     ? `https://www.youtube.com/embed/${
+  //         state.movieVideo.results?.find((prop) => {
+  //           if (prop.type === "Trailer") {
+  //             return prop.type === "Trailer";
+  //           }
+  //         })?.key
+  //       }`
+  //     : `https://www.youtube.com/embed/${
+  //         state.tvVideo.results?.find((prop) => prop.type === "Trailer")?.key
+  //       }`
+  //   : "";
 
   return (
     <React.Fragment>
@@ -536,23 +570,7 @@ const FilmOverview = () => {
               className={clsx(filmOverviewCSS.modalTrailerVideo)}
               width="100%"
               height="564px"
-              src={
-                state.movieVideo.id || state.tvVideo.id
-                  ? state.movieVideo.id
-                    ? `https://www.youtube.com/embed/${
-                        state.movieVideo.results?.find((prop) => {
-                          if (prop.type === "Trailer") {
-                            return prop.type === "Trailer";
-                          }
-                        })?.key
-                      }`
-                    : `https://www.youtube.com/embed/${
-                        state.tvVideo.results?.find(
-                          (prop) => prop.type === "Trailer"
-                        )?.key
-                      }`
-                  : ""
-              }
+              src={renderTv || renderMovie}
             ></iframe>
           </section>
         </div>
