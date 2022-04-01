@@ -54,7 +54,7 @@ const ContentFilmDetail = () => {
 
   return (
     <APIMovieCredits.Provider value={state.movieCredits}>
-      <FilmOverview></FilmOverview>
+      {/* <FilmOverview></FilmOverview> */}
       <CastList></CastList>
     </APIMovieCredits.Provider>
   );

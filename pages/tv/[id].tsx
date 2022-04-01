@@ -59,7 +59,7 @@ const FilmTVDetail = () => {
       </Head>
       <div className="FilmTVDetaiWrapper">
         <Header></Header>
-        {/* <ContentFilmDetail></ContentFilmDetail> */}
+        <ContentFilmDetail></ContentFilmDetail>
         <Footer></Footer>
       </div>
     </APITvContext.Provider>
