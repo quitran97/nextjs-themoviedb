@@ -17,7 +17,7 @@ import { saveAPITv, saveAPITheater } from "./API/action";
 import PopularMovie from "interface/PopularMovie";
 
 // Fetch Data
-const fetchData = (shouldFetch: boolean, APIhref: string) => {
+const FetchData = (shouldFetch: boolean, APIhref: string) => {
   const { data, error } = useSWR(shouldFetch ? APIhref : null, fetch);
 
   if (error) {
@@ -46,8 +46,8 @@ const FilmLists = ({
   const [state, dispatch] = useReducer(reducer, initState);
 
   // CallAPI
-  const data1 = fetchData(shouldFetch, APIPopularTv);
-  const data2 = fetchData(shouldFetch, APIPopularTheater);
+  const data1 = FetchData(shouldFetch, APIPopularTv);
+  const data2 = FetchData(shouldFetch, APIPopularTheater);
 
   const getAPI1 = useCallback(async () => {
     if (data1 && shouldFetch) {
@@ -55,7 +55,7 @@ const FilmLists = ({
       dispatch(saveAPITv(dataAPI1.results));
       setShouldFetch(false);
     }
-  }, [data1]);
+  }, [data1, shouldFetch]);
 
   const getAPI2 = useCallback(async () => {
     if (data2 && shouldFetch) {
@@ -63,7 +63,7 @@ const FilmLists = ({
       dispatch(saveAPITheater(dataAPI2.results));
       setShouldFetch(false);
     }
-  }, [data2]);
+  }, [data2, shouldFetch]);
 
   const handleScroll = (e: any) => {
     // console.log(e.target.scrollLeft);
@@ -91,9 +91,10 @@ const FilmLists = ({
   };
 
   useEffect(() => {
-    ulScroll.current?.addEventListener("scroll", handleScroll);
+    const ulScrollElement = ulScroll.current;
+    ulScrollElement?.addEventListener("scroll", handleScroll);
     return () => {
-      ulScroll.current?.removeEventListener("scroll", handleScroll);
+      ulScrollElement?.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

@@ -34,7 +34,7 @@ import {
 } from "@ant-design/icons";
 import { APIMovieCredits } from "./";
 
-const fetchDataRating = (shouldFetch: boolean, dataAPI: string) => {
+const FetchDataRating = (shouldFetch: boolean, dataAPI: string) => {
   const { data, error } = useSWR(shouldFetch ? dataAPI : null, fetch);
   if (error) {
     alert("Fetch defail error...");
@@ -76,10 +76,10 @@ const FilmOverview = () => {
     : "";
 
   // Fetch API
-  const tVResponse = fetchDataRating(shouldFetch, tvRatingAPI);
-  const movieReleaseResponse = fetchDataRating(shouldFetch, movieReleaseAPI);
-  const movieVideoResponse = fetchDataRating(shouldFetch, movieVideoAPI);
-  const tvVideoResponse = fetchDataRating(shouldFetch, tvVideoAPI);
+  const tVResponse = FetchDataRating(shouldFetch, tvRatingAPI);
+  const movieReleaseResponse = FetchDataRating(shouldFetch, movieReleaseAPI);
+  const movieVideoResponse = FetchDataRating(shouldFetch, movieVideoAPI);
+  const tvVideoResponse = FetchDataRating(shouldFetch, tvVideoAPI);
 
   // get API data Function
   const getAPITvRating = useCallback(async () => {
@@ -88,7 +88,7 @@ const FilmOverview = () => {
       dispatch(setAPITvRating(dataTvRating));
       setShouldFetch(false);
     }
-  }, [tVResponse]);
+  }, [tVResponse, shouldFetch]);
 
   const getAPIMovieRelease = useCallback(async () => {
     if (movieReleaseResponse && shouldFetch) {
@@ -96,7 +96,7 @@ const FilmOverview = () => {
       dispatch(setAPIMovieRelease(dataMovieRelease.results));
       setShouldFetch(false);
     }
-  }, [movieReleaseResponse]);
+  }, [movieReleaseResponse, shouldFetch]);
 
   const getAPIMovieVideo = useCallback(async () => {
     if (movieVideoResponse && shouldFetch) {
@@ -104,7 +104,7 @@ const FilmOverview = () => {
       dispatch(setVideoMovie(dataMovieRelease));
       setShouldFetch(false);
     }
-  }, [movieVideoResponse]);
+  }, [movieVideoResponse, shouldFetch]);
 
   const getAPITvVideo = useCallback(async () => {
     if (tvVideoResponse && shouldFetch) {
@@ -112,7 +112,7 @@ const FilmOverview = () => {
       dispatch(setVideoTv(dataTvRelease));
       setShouldFetch(false);
     }
-  }, [tvVideoResponse]);
+  }, [tvVideoResponse, shouldFetch]);
 
   // Call API & dispatch
 

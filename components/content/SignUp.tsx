@@ -11,10 +11,11 @@ const SignUp = () => {
         <div className={clsx(signUpCSS.signUpContent)}>
           <div className={clsx(signUpCSS.contentLeft)}>
             <p>
-              Get access to maintain your own{" "}
-              <i>custom personal lists, track what you've seen</i> and search
-              and filter for <i>what to watch next</i> —regardless if it's in
-              theatres, on TV or available on popular streaming services like .
+              Get access to maintain your own
+              <i>{`custom personal lists, track what you've seen`}</i> and
+              search and filter for <i>what to watch next</i>
+              {` —regardless if it's in
+              theatres, on TV or available on popular streaming services like .`}
             </p>
             <input
               type="button"
@@ -29,7 +30,7 @@ const SignUp = () => {
               Filter by your subscribed streaming services and find something to
               watch
             </li>
-            <li>Log the movies and TV shows you've seen</li>
+            <li>{`Log the movies and TV shows you've seen`}</li>
             <li>Build custom lists</li>
             <li>Contribute to and improve our database</li>
           </ul>

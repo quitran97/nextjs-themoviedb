@@ -14,7 +14,7 @@ import { setCreditsMovie } from "./reducer/action";
 import MovieCreditsProps from "interface/MovieCreditsProps";
 import CastList from "./CastList";
 
-const fetchData = (shouldFetch: boolean, dataAPI: string) => {
+const FetchData = (shouldFetch: boolean, dataAPI: string) => {
   const { data, error } = useSWR(shouldFetch ? dataAPI : null, fetch);
   if (error) {
     alert("Fetch defail error...");
@@ -35,7 +35,7 @@ const ContentFilmDetail = () => {
     : "";
 
   // Fetch API
-  const movieCreditsResponse = fetchData(shouldFetch, movieCreditsAPI);
+  const movieCreditsResponse = FetchData(shouldFetch, movieCreditsAPI);
 
   // get API data Function
   const getAPIMovieCredits = useCallback(async () => {
@@ -44,7 +44,7 @@ const ContentFilmDetail = () => {
       dispatch(setCreditsMovie(dataMovieCredits));
       setShouldFetch(false);
     }
-  }, [movieCreditsResponse]);
+  }, [movieCreditsResponse, shouldFetch]);
 
   // Call API & dispatch
 

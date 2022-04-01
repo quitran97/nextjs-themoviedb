@@ -16,7 +16,10 @@ const TrailerContent = () => {
       </div>
       <div className={clsx(trailerCSS.trailerLists)}>
         <p className="textWhite">
-          This panel didn't return any results. Try <a href="">refreshing</a> it
+          {`This panel didn't return any results. Try ${(
+            <a href="#">refreshing</a>
+          )}
+          it`}
         </p>
       </div>
     </section>

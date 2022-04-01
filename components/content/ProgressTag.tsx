@@ -14,7 +14,7 @@ const ProgressTag = ({
       <div className={clsx(progressCSS.tagAvatar)}>
         <Link href="#">
           <a>
-            <Image src={Avatar} width={56} height={56}></Image>
+            <Image src={Avatar} width={56} height={56} alt="Avatar"></Image>
           </a>
         </Link>
       </div>

@@ -17,7 +17,7 @@ import { FilmTVDetailProps } from "interface/FilmDetailProps";
 
 export const APITvContext = createContext<FilmTVDetailProps>({});
 
-const fetchDataDetail = (shouldFetch: boolean, dataAPI: string) => {
+const FetchDataDetail = (shouldFetch: boolean, dataAPI: string) => {
   const { data, error } = useSWR(shouldFetch ? dataAPI : null, fetch);
   if (error) {
     alert("Fetch TV defail error...");
@@ -37,7 +37,7 @@ const FilmTVDetail = () => {
     : "";
 
   // Fetch API
-  const TVResponse = fetchDataDetail(shouldFetch, TVDetailAPI);
+  const TVResponse = FetchDataDetail(shouldFetch, TVDetailAPI);
 
   const getAPITvDetail = useCallback(async () => {
     if (TVResponse && shouldFetch) {
@@ -45,7 +45,7 @@ const FilmTVDetail = () => {
       dispatch(setAPITvDetail(DataTv));
       setShouldFetch(false);
     }
-  }, [TVResponse]);
+  }, [TVResponse, shouldFetch]);
 
   // Call API & ditpatch
   useEffect(() => {

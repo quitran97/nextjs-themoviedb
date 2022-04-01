@@ -14,7 +14,7 @@ import reducer, { initState } from "./reducer/reducer";
 import { setCreditsTv } from "./reducer/action";
 import castListCSS from "./castList.module.css";
 
-const fetchDataRating = (shouldFetch: boolean, dataAPI: string) => {
+const FetchDataRating = (shouldFetch: boolean, dataAPI: string) => {
   const { data, error } = useSWR(shouldFetch ? dataAPI : null, fetch);
   if (error) {
     alert("Fetch defail error...");
@@ -35,7 +35,7 @@ const CastList = () => {
     : "";
 
   //  Fetch TV Cast
-  const tvCastResponse = fetchDataRating(shouldFetch, tvCastAPI);
+  const tvCastResponse = FetchDataRating(shouldFetch, tvCastAPI);
 
   //  Function getAPI
   const getAPITvCredits = useCallback(async () => {
@@ -44,7 +44,7 @@ const CastList = () => {
       dispatch(setCreditsTv(dataTvCredits));
       setShouldFetch(false);
     }
-  }, [tvCastResponse]);
+  }, [tvCastResponse, shouldFetch]);
 
   // Call API & dispatch
 

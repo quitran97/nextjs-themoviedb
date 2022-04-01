@@ -12,23 +12,23 @@ const Header = () => {
   const [scroll, setScroll] = useState<number>(0);
   // const headerItem = useRef<HTMLElement | null>(null);
 
-  const handleHiddenHeader = () => {
-    // console.log(`${window.scrollY} &&& ${scroll}`);
-    if (typeof window !== "undefined") {
-      if (window.scrollY < scroll) {
-        setShow(false); //Hide the header when scroll down
-      } else {
-        setShow(true); // Show the header when scroll up
-      }
-
-      setScroll(window.scrollY); // set last scroll after setShow
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleHiddenHeader);
+    const handleHiddenHeader = () => {
+      // console.log(`${window.scrollY} &&& ${scroll}`);
+      if (typeof window !== "undefined") {
+        if (window.scrollY < scroll) {
+          setShow(false); //Hide the header when scroll down
+        } else {
+          setShow(true); // Show the header when scroll up
+        }
 
-    return () => window.removeEventListener("scroll", handleHiddenHeader);
+        setScroll(window.scrollY); // set last scroll after setShow
+      }
+    };
+    const windowEvent = window;
+    windowEvent.addEventListener("scroll", handleHiddenHeader);
+
+    return () => windowEvent.removeEventListener("scroll", handleHiddenHeader);
   }, [scroll]);
 
   return (
@@ -56,58 +56,90 @@ const Header = () => {
                   <Link href="#">Movies</Link>
                   <ul className={clsx(headerCSS.subNavMedia__items)}>
                     <li>
-                      <Link href="#">Popular</Link>
+                      <Link href="#" passHref>
+                        Popular
+                      </Link>
                     </li>
                     <li>
-                      <Link href="#">Now Playing</Link>
+                      <Link href="#" passHref>
+                        Now Playing
+                      </Link>
                     </li>
                     <li>
-                      <Link href="#">Upcoming</Link>
+                      <Link href="#" passHref>
+                        Upcoming
+                      </Link>
                     </li>
                     <li>
-                      <Link href="#">Top Rated</Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link href="#">TV Shows</Link>
-                  <ul className={clsx(headerCSS.subNavMedia__items)}>
-                    <li>
-                      <Link href="#">Popular</Link>
-                    </li>
-                    <li>
-                      <Link href="#">Airing Today</Link>
-                    </li>
-                    <li>
-                      <Link href="#">On TV</Link>
-                    </li>
-                    <li>
-                      <Link href="#">Top Rated</Link>
+                      <Link href="#" passHref>
+                        Top Rated
+                      </Link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <Link href="#">People</Link>
+                  <Link href="#" passHref>
+                    TV Shows
+                  </Link>
                   <ul className={clsx(headerCSS.subNavMedia__items)}>
                     <li>
-                      <Link href="#">Popular People</Link>
+                      <Link href="#" passHref>
+                        Popular
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="#" passHref>
+                        Airing Today
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="#" passHref>
+                        On TV
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="#" passHref>
+                        Top Rated
+                      </Link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <Link href="#">More</Link>
+                  <Link href="#" passHref>
+                    People
+                  </Link>
                   <ul className={clsx(headerCSS.subNavMedia__items)}>
                     <li>
-                      <Link href="#">Discussions</Link>
+                      <Link href="#" passHref>
+                        Popular People
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link href="#" passHref>
+                    More
+                  </Link>
+                  <ul className={clsx(headerCSS.subNavMedia__items)}>
+                    <li>
+                      <Link href="#" passHref>
+                        Discussions
+                      </Link>
                     </li>
                     <li>
-                      <Link href="#">Leaderboard</Link>
+                      <Link href="#" passHref>
+                        Leaderboard
+                      </Link>
                     </li>
                     <li>
-                      <Link href="#">Support</Link>
+                      <Link href="#" passHref>
+                        Support
+                      </Link>
                     </li>
                     <li>
-                      <Link href="#">API</Link>
+                      <Link href="#" passHref>
+                        API
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -131,15 +163,19 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link href="#" passHref>
                     <div className={clsx(headerCSS.changeLanguage)}>vi</div>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">Đăng nhập</Link>
+                  <Link href="#" passHref>
+                    Đăng nhập
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#">Tham gia TMDB</Link>
+                  <Link href="#" passHref>
+                    Tham gia TMDB
+                  </Link>
                 </li>
                 <li>
                   <Link href="#">
