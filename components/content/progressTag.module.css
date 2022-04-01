@@ -15,6 +15,7 @@
     height: 56px;
     display: inline-flex;
     border-radius: 50%;
+    background-color: aqua;
     align-items: center;
     justify-content: center;
 }

@@ -12,7 +12,7 @@ const ProgressTag = ({
     <section className={clsx(progressCSS.tagWrapper)}>
       <div className={clsx(progressCSS.tagAvatar)}>
         <Link href="#">
-          <a style={{ backgroundColor: `#${Math.floor(Math.random() * 900)}` }}>
+          <a>
             <span>{name?.charAt(0)}</span>
           </a>
         </Link>
