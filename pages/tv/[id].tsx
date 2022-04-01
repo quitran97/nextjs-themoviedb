@@ -57,7 +57,7 @@ const FilmTVDetail = () => {
       <Head>
         <title>{state.filmTVDetail.original_name}</title>
       </Head>
-      <div className="FilmTVDetaiWrapper">
+      <div>
         <Header></Header>
         <ContentFilmDetail></ContentFilmDetail>
         <Footer></Footer>
