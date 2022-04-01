@@ -5,7 +5,6 @@ import {
   useEffect,
   useReducer,
   createContext,
-  useLayoutEffect,
 } from "react";
 import Head from "next/head";
 import useSWR from "swr";
@@ -31,12 +30,6 @@ const FilmTVDetail = () => {
   const [state, dispatch] = useReducer(reducer, initState);
   const router = useRouter();
   const id = router.query.id;
-
-  useLayoutEffect(() => {
-    if (!router.isFallback) {
-      console.log("loading...");
-    }
-  }, [router.isFallback]);
 
   // API TV
   const TVDetailAPI: string = id
