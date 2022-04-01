@@ -306,6 +306,7 @@
   background: rgba(0, 0, 0, 0.7);
   z-index: 2;
   display: none;
+  animation: showEffect normal 0.2s;
 }
 
 .modalTitle {
@@ -338,7 +339,6 @@
 
 .modalTrailerVideo {
   border: none;
-  animation: showEffect ease-in-out 0.2s;
 }
 
 /* Expand Backdrop */
@@ -375,10 +375,10 @@
 
 @keyframes showEffect {
   from {
-    transform: scale(0.1);
+    transform: scale(0);
   }
 
   to {
-    transform: scale(1)
+    transform: scale(1);
   }
 }

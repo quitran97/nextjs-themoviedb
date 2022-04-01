@@ -56,6 +56,10 @@ const FilmTVDetail = () => {
     <APITvContext.Provider value={state.filmTVDetail}>
       <Head>
         <title>{state.filmTVDetail.original_name}</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
       </Head>
       <div>
         <Header></Header>
