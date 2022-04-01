@@ -52,16 +52,14 @@ const FilmTVDetail = () => {
     getAPITvDetail();
   }, [getAPITvDetail]);
 
-  return router.isFallback ? (
-    <div>Loading...</div>
-  ) : (
+  return (
     <APITvContext.Provider value={state.filmTVDetail}>
       <Head>
         <title>{state.filmTVDetail.original_name}</title>
       </Head>
       <div className="FilmTVDetaiWrapper">
         <Header></Header>
-        <ContentFilmDetail></ContentFilmDetail>
+        {/* <ContentFilmDetail></ContentFilmDetail> */}
         <Footer></Footer>
       </div>
     </APITvContext.Provider>
