@@ -247,7 +247,7 @@ const FilmOverview = () => {
     <div>{`loading...`}</div>
   ) : (
     <React.Fragment>
-      <div
+      {/* <div
         className={clsx(filmOverviewCSS.filmOverviewWrap)}
         style={{
           backgroundImage:
@@ -522,7 +522,7 @@ const FilmOverview = () => {
             </ul>
           </div>
         </section>
-      </div>
+      </div> */}
       {showTrailer && (
         <div
           className={clsx(filmOverviewCSS.modalTrailer, {
@@ -567,7 +567,7 @@ const FilmOverview = () => {
         })}
       >
         <div className={clsx(filmOverviewCSS.backdropExpandWrap)}>
-          <Image
+          {/* <Image
             loader={
               APITvData.poster_path || APIMovieData.poster_path
                 ? myLoader
@@ -584,7 +584,7 @@ const FilmOverview = () => {
             width={400}
             height={600}
             alt="Poster"
-          />
+          /> */}
           <CloseOutlined
             className={clsx(filmOverviewCSS.modalTrailerClose) + " textWhite"}
           />
