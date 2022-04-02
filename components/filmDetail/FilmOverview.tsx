@@ -263,7 +263,7 @@ const FilmOverview = () => {
         }`
       );
     }
-  }, [state.movieVideo.results, state.tvVideo.results]);
+  });
 
   // state.movieVideo.id || state.tvVideo.id
   //   ? state.movieVideo.id
@@ -578,7 +578,7 @@ const FilmOverview = () => {
               className={clsx(filmOverviewCSS.modalTrailerVideo)}
               width="100%"
               height="564px"
-              src={renderTv || renderMovie}
+              src={renderTv ? renderTv : renderMovie ? renderMovie : ""}
             ></iframe>
           </section>
         </div>
