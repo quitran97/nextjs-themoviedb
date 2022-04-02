@@ -135,6 +135,7 @@
 #header .changeLanguage:hover {
   background-color: #fff;
   color: #333;
+  cursor: pointer;
 }
 
 /* Mix 2 SubNav */

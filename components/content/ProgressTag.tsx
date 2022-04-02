@@ -3,6 +3,16 @@ import Link from "next/link";
 import progressCSS from "./progressTag.module.css";
 import ProgressTagProps from "interface/ProgressTagProps";
 
+const colorRandom = [
+  "#333",
+  "#01c6ac",
+  "#ff4918",
+  "#1859ff",
+  "#0ec619",
+  "#c60eb6",
+  "#c6af0e",
+];
+
 const ProgressTag = ({
   gaugeTop = 2540000,
   gaugeBottom = 9000,
@@ -12,7 +22,11 @@ const ProgressTag = ({
     <section className={clsx(progressCSS.tagWrapper)}>
       <div className={clsx(progressCSS.tagAvatar)}>
         <Link href="#">
-          <a>
+          <a
+            style={{
+              backgroundColor: `${colorRandom[Math.floor(Math.random() * 7)]}`,
+            }}
+          >
             <span>{name?.charAt(0)}</span>
           </a>
         </Link>
