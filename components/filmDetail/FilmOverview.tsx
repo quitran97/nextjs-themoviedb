@@ -137,13 +137,17 @@ const FilmOverview = () => {
   // Convert time
   useEffect(() => {
     const hour = Math.floor(
-      APITvData.episode_run_time?.at(0)
-        ? (APITvData.episode_run_time?.at(0) as number) / 60
+      APITvData.episode_run_time?.length
+        ? (APITvData?.episode_run_time?.find(
+            (number) => !!number === true
+          ) as number) / 60
         : 1
     );
     const minute = Math.floor(
-      APITvData.episode_run_time?.at(0)
-        ? (APITvData.episode_run_time?.at(0) as number) % 60
+      APITvData?.episode_run_time?.length
+        ? (APITvData?.episode_run_time?.find(
+            (number) => !!number === true
+          ) as number) % 60
         : 0
     );
 
@@ -373,11 +377,13 @@ const FilmOverview = () => {
                 )}
                 {state.movieRelease[0] && (
                   <span className={clsx(filmOverviewCSS.dateRelease)}>
-                    {state.movieRelease
+                    {state.movieRelease[0]
                       ? new Date(
                           state.movieRelease
                             .find((prop) => prop.iso_3166_1 === "US")
-                            ?.release_dates?.at(0)?.release_date as string
+                            ?.release_dates?.find(
+                              (prop) => !!prop.release_date === true
+                            )?.release_date as string
                         ).toLocaleDateString()
                       : ""}
                     (
@@ -462,7 +468,9 @@ const FilmOverview = () => {
               >
                 <StarFilled />
               </li>
-              {(APIMovieData.id || state.tvVideo.results?.at(0)?.type) && (
+              {(APIMovieData.id ||
+                state.tvVideo.results?.find((prop) => !!prop.key === true)
+                  ?.key) && (
                 <li
                   className={clsx(filmOverviewCSS.trailerBtn) + " fontWeight6"}
                 >
