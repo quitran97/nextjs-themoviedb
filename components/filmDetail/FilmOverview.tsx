@@ -262,7 +262,7 @@ const FilmOverview = () => {
         }`
       );
     }
-  });
+  }, [state.tvVideo, state.movieVideo]);
 
   // state.movieVideo.id || state.tvVideo.id
   //   ? state.movieVideo.id
