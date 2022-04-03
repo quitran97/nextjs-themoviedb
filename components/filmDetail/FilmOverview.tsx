@@ -8,7 +8,6 @@ import React, {
   useContext,
   useState,
   useCallback,
-  memo,
 } from "react";
 import reducer, { initState } from "./reducer/reducer";
 import {
@@ -616,4 +615,4 @@ const FilmOverview = () => {
   );
 };
 
-export default memo(FilmOverview);
+export default FilmOverview;
