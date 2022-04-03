@@ -6,7 +6,6 @@ import React, {
   useContext,
   useCallback,
   useReducer,
-  memo,
 } from "react";
 import FilmOverview from "./FilmOverview";
 import { APIMovieContext } from "pages/movie/[id]";
@@ -61,4 +60,4 @@ const ContentFilmDetail = () => {
   );
 };
 
-export default memo(ContentFilmDetail);
+export default ContentFilmDetail;
