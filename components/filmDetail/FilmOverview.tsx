@@ -247,21 +247,17 @@ const FilmOverview = () => {
   }, []);
 
   useEffect(() => {
-    if (state.tvVideo.id) {
-      setRenderTv(
-        `https://www.youtube.com/embed/${
-          state.tvVideo.results?.find((prop) => prop.type === "Trailer")?.key
-        }`
-      );
-    }
+    setRenderTv(
+      `https://www.youtube.com/embed/${
+        state.tvVideo.results?.find((prop) => prop.type === "Trailer")?.key
+      }`
+    );
 
-    if (state.movieVideo.id) {
-      setRenderMovie(
-        `https://www.youtube.com/embed/${
-          state.movieVideo.results?.find((prop) => prop.type === "Trailer")?.key
-        }`
-      );
-    }
+    setRenderMovie(
+      `https://www.youtube.com/embed/${
+        state.movieVideo.results?.find((prop) => prop.type === "Trailer")?.key
+      }`
+    );
   }, [state.tvVideo, state.movieVideo]);
 
   // state.movieVideo.id || state.tvVideo.id

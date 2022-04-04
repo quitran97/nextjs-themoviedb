@@ -11,7 +11,10 @@ const Home: NextPage = () => {
       <Head>
         <title>The Movie Database (TMDB)</title>
         <link rel="icon" href="/favicon.png" type="image/x-icon" />
-        <link rel="image_src" href="/TMDB_logo.svg"></link>
+        <link
+          rel="image_src"
+          href="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+        ></link>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
