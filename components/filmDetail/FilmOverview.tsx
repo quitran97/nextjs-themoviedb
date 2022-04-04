@@ -247,18 +247,22 @@ const FilmOverview = () => {
   }, []);
 
   useEffect(() => {
-    setRenderTv(
-      `https://www.youtube.com/embed/${
-        state.tvVideo.results?.find((prop) => prop.type === "Trailer")?.key
-      }`
-    );
+    if (state.tvVideo.results) {
+      setRenderTv(
+        `https://www.youtube.com/embed/${
+          state.tvVideo.results?.find((prop) => prop.type === "Trailer")?.key
+        }`
+      );
+    }
 
-    setRenderMovie(
-      `https://www.youtube.com/embed/${
-        state.movieVideo.results?.find((prop) => prop.type === "Trailer")?.key
-      }`
-    );
-  }, [state.tvVideo, state.movieVideo]);
+    if (state.movieVideo.results) {
+      setRenderMovie(
+        `https://www.youtube.com/embed/${
+          state.movieVideo.results?.find((prop) => prop.type === "Trailer")?.key
+        }`
+      );
+    }
+  });
 
   // state.movieVideo.id || state.tvVideo.id
   //   ? state.movieVideo.id
@@ -573,7 +577,15 @@ const FilmOverview = () => {
               className={clsx(filmOverviewCSS.modalTrailerVideo)}
               width="100%"
               height="564px"
-              src={renderTv ? renderTv : renderMovie ? renderMovie : ""}
+              src={
+                renderTv || renderMovie
+                  ? renderTv
+                    ? renderTv
+                    : renderMovie
+                    ? renderMovie
+                    : ""
+                  : ""
+              }
             ></iframe>
           </section>
         </div>
