@@ -11,7 +11,7 @@
   "dependencies": {
     "antd": "^4.18.9",
     "babel-plugin-inline-react-svg": "^2.0.1",
-    "clsx": "^1.1.1",
+    "clsx": "1.2.1",
     "next": "12.1.0",
     "normalize.css": "^8.0.1",
     "react": "17.0.2",
